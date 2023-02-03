@@ -1,4 +1,5 @@
 ﻿
+using App.TaskManagement.Helpers;
 using Library.TaskManagement.Models;
 
 namespace CSharpProject
@@ -7,45 +8,18 @@ namespace CSharpProject
     {
         static void Main(string[] args)
         {
-            List<Person> StudentList = new List<Person>();
+            Console.WriteLine("Choose an action: ");
+            Console.WriteLine("1. Add student enrollment");
+            Console.WriteLine("2. Exit")
+            var input = Console.ReadLine();
 
-            Console.WriteLine("What is the ID of the student?");
-            var id = Console.ReadLine();
-
-            Console.WriteLine("What is the name of the student?");
-            var name = Console.ReadLine();
-
-            Console.WriteLine("What is the classification of the student? [(F)reshman, S(O)phomore, (J)unior, (S)enior]");
-            var classification = Console.ReadLine() ?? string.Empty;
-            PersonClassification classEnum;
-
-            if (classification.Equals("O", StringComparison.InvariantCultureIgnoreCase))
+            if(int.TryParse(input, out var result))
             {
-                classEnum = PersonClassification.Sophomore;
+                if(result == 1)
+                {
+                    new StudentHelper().CreateStudentRecord();
+                }
             }
-            else if(classification.Equals("J", StringComparison.InvariantCultureIgnoreCase))
-            {
-                classEnum = PersonClassification.Junior;
-            }
-            else if(classification.Equals("S", StringComparison.InvariantCultureIgnoreCase))
-            {
-                classEnum = PersonClassification.Senior;
-            }
-            else (classification.Equals("F", StringComparison.InvariantCultureIgnoreCase))
-            {
-                classEnum = PersonClassification.Freshman;
-            }
-            
-                var student = new Person
-            {
-                ID = int.Parse(id ?? "0"),
-                Name = name ?? string.Empty,
-                Classification = classEnum
-            };
-
-            StudentList.Add(student);
-
-            StudentList.ForEach(Console.WriteLine);
         }
     }
 }
