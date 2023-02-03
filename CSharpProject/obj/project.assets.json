@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {}
+    "net7.0": {
+      "Library.TaskManagement/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Library.TaskManagement.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Library.TaskManagement.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Library.TaskManagement/1.0.0": {
+      "type": "project",
+      "path": "../Library.TaskManagement/Library.TaskManagement.csproj",
+      "msbuildProject": "../Library.TaskManagement/Library.TaskManagement.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net7.0": []
+    "net7.0": [
+      "Library.TaskManagement >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Jack\\.nuget\\packages\\": {},
@@ -39,7 +58,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Jack\\Documents\\SPRING 2022\\C# Full Stack\\CSharpProject\\Library.TaskManagement\\Library.TaskManagement.csproj": {
+              "projectPath": "C:\\Users\\Jack\\Documents\\SPRING 2022\\C# Full Stack\\CSharpProject\\Library.TaskManagement\\Library.TaskManagement.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

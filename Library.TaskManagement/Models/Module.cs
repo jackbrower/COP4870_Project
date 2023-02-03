@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Library.TaskManagement.Models
 {
-    internal class Module
+    public class Module
     {
         public string? Name { get; set; }
 

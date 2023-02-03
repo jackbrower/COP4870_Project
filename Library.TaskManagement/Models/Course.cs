@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Library.TaskManagement.Models
 {
-    internal class Course
+    public class Course
     {
         public string Code { get; set; }
 
