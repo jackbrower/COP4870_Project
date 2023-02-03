@@ -15,14 +15,32 @@ namespace CSharpProject
             Console.WriteLine("What is the name of the student?");
             var name = Console.ReadLine();
 
-            Console.WriteLine("What is the classification of the student?");
-            var classification = Console.ReadLine();
+            Console.WriteLine("What is the classification of the student? [(F)reshman, S(O)phomore, (J)unior, (S)enior]");
+            var classification = Console.ReadLine() ?? string.Empty;
+            PersonClassification classEnum;
 
-            var student = new Person
+            if (classification.Equals("O", StringComparison.InvariantCultureIgnoreCase))
+            {
+                classEnum = PersonClassification.Sophomore;
+            }
+            else if(classification.Equals("J", StringComparison.InvariantCultureIgnoreCase))
+            {
+                classEnum = PersonClassification.Junior;
+            }
+            else if(classification.Equals("S", StringComparison.InvariantCultureIgnoreCase))
+            {
+                classEnum = PersonClassification.Senior;
+            }
+            else (classification.Equals("F", StringComparison.InvariantCultureIgnoreCase))
+            {
+                classEnum = PersonClassification.Freshman;
+            }
+            
+                var student = new Person
             {
                 ID = int.Parse(id ?? "0"),
                 Name = name ?? string.Empty,
-                Classification = string.IsNullOrEmpty(classification) ? 'F' : classification.ToUpper()[0]
+                Classification = classEnum
             };
 
             StudentList.Add(student);
