@@ -1,4 +1,5 @@
 ﻿using Library.TaskManagement.Models;
+using Library.TaskManagement.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace App.TaskManagement.Helpers
 {
     internal class StudentHelper
     {
-        private List<Person> StudentList = new List<Person>();
+        private StudentService studentService = new StudentService();
 
         public void CreateStudentRecord()
         {
@@ -47,9 +48,9 @@ namespace App.TaskManagement.Helpers
                 Classification = classEnum
             };
 
-            StudentList.Add(student);
+            studentService.Add(student);
 
-            StudentList.ForEach(Console.WriteLine);
+            studentService.StudentList.ForEach(Console.WriteLine);
         }
     }
 }
