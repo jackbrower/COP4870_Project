@@ -14,5 +14,10 @@
             Name = string.Empty;
             Grades = new Dictionary<int, double>();
         }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }
