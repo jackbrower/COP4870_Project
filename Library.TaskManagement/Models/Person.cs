@@ -17,7 +17,7 @@
 
         public override string ToString()
         {
-            return Name;
+            return $"[{ID}] {Name} - {Classification}";
         }
     }
 
