@@ -13,3 +13,6 @@ C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\CSharpProject\ob
 C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\CSharpProject\obj\Debug\net7.0\App.TaskManagement.pdb
 C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\CSharpProject\obj\Debug\net7.0\App.TaskManagement.genruntimeconfig.cache
 C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\CSharpProject\obj\Debug\net7.0\ref\App.TaskManagement.dll
+C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\CSharpProject\bin\Debug\net7.0\Library.TaskManagement.dll
+C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\CSharpProject\bin\Debug\net7.0\Library.TaskManagement.pdb
+C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\CSharpProject\obj\Debug\net7.0\App.TaskManagement.csproj.CopyComplete
