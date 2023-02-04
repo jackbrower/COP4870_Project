@@ -49,8 +49,11 @@ namespace App.TaskManagement.Helpers
             };
 
             studentService.Add(student);
+        }
 
-            studentService.StudentList.ForEach(Console.WriteLine);
+        public void ListStudents()
+        {
+            studentService.ListStudents();
         }
     }
 }
