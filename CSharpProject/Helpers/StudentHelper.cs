@@ -53,7 +53,7 @@ namespace App.TaskManagement.Helpers
 
         public void ListStudents()
         {
-            studentService.ListStudents();
+            studentService.Students.ForEach(Console.WriteLine);
         }
     }
 }

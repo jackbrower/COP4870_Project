@@ -16,9 +16,12 @@ namespace Library.TaskManagement.Services
             StudentList.Add(student);
         }
 
-        public void ListStudents()
+        public List<Person> Students
         {
-            StudentList.ForEach(Console.WriteLine);
+            get
+            {
+                return StudentList;
+            }
         }
     }
 }
