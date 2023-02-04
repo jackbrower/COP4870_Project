@@ -9,22 +9,26 @@ namespace CSharpProject
         static void Main(string[] args)
         {
             var studentHelper = new StudentHelper();
-            Console.WriteLine("Choose an action: ");
-            Console.WriteLine("1. Add student enrollment");
-            Console.WriteLine("2. Exit");
-            var input = Console.ReadLine();
 
-            if(int.TryParse(input, out var result))
+            bool cont = true;
+            while (cont)
             {
-                while(result != 2) {
+                Console.WriteLine("Choose an action: ");
+                Console.WriteLine("1. Add student enrollment");
+                Console.WriteLine("2. Exit");
+                var input = Console.ReadLine();
+
+                if (int.TryParse(input, out var result))
+                {
                     if (result == 1)
                     {
                         studentHelper.CreateStudentRecord();
                     }
+                    else if (result == 2)
+                    {
+                        cont = false;
+                    }
                 }
-
-                input = Console.ReadLine();
-                int.TryParse(input, out result);
             }
         }
     }

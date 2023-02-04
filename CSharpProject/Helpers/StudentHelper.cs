@@ -33,10 +33,10 @@ namespace App.TaskManagement.Helpers
                 classEnum = PersonClassification.Junior;
             }
             else if (classification.Equals("S", StringComparison.InvariantCultureIgnoreCase))
-            {
+            {    
                 classEnum = PersonClassification.Senior;
             }
-            else (classification.Equals("F", StringComparison.InvariantCultureIgnoreCase))
+            else
             {
                 classEnum = PersonClassification.Freshman;
             }
