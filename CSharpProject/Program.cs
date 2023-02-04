@@ -2,13 +2,14 @@
 using App.TaskManagement.Helpers;
 using Library.TaskManagement.Models;
 
-namespace CSharpProject
+namespace App.TaskManagement
 {
     internal class Program
     {
         static void Main(string[] args)
         {
             var studentHelper = new StudentHelper();
+            var courseHelper = new CourseHelper();
 
             bool cont = true;
             while (cont)
@@ -17,7 +18,8 @@ namespace CSharpProject
                 Console.WriteLine("1. Add student enrollment");
                 Console.WriteLine("2. List all students");
                 Console.WriteLine("3. Search for a student");
-                Console.WriteLine("4. Exit");
+                Console.WriteLine("4. Add a new course");
+                Console.WriteLine("5. Exit");
                 var input = Console.ReadLine();
 
                 if (int.TryParse(input, out var result))
@@ -35,6 +37,10 @@ namespace CSharpProject
                         studentHelper.SearchStudents();
                     }
                     else if (result == 4)
+                    {
+                        courseHelper.CreateCourseRecord();
+                    }
+                    else if (result == 5)
                     {
                         cont = false;
                     }
