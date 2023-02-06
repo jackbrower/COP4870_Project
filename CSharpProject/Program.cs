@@ -63,7 +63,7 @@ namespace App.TaskManagement
                     }
                     else if (result == 8)
                     {
-
+                        courseHelper.SearchCourses();
                     }
                     else if (result == 9)
                     {

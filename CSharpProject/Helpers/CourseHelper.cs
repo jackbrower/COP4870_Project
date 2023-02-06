@@ -45,6 +45,14 @@ namespace App.TaskManagement.Helpers
             courseService.Courses.ForEach(Console.WriteLine);
         }
 
+        public void SearchCourses()
+        {
+            Console.WriteLine("Enter a query: ");
+            var query = Console.ReadLine() ?? string.Empty;
+
+            courseService.Search(query).ToList().ForEach(Console.WriteLine);
+        }
+
         public void UpdateCourseRecord()
         {
             Console.WriteLine("Enter the code of a course to update: ");

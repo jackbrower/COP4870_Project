@@ -24,5 +24,11 @@ namespace Library.TaskManagement.Services
             }
         }
 
+        public IEnumerable<Course> Search(string query)
+        {
+            return courseList.Where(c => c.Name.ToUpper().Contains(query.ToUpper())
+            || c.Description.ToUpper().Contains(query.ToUpper())
+            || c.Code.ToUpper().Contains(query.ToUpper())   );
+        }
     }
 }
