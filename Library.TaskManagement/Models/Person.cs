@@ -1,4 +1,4 @@
-﻿namespace Library.TaskManagement.Models
+﻿namespace Library.LearningManagement.Models
 {
     public class Person
     {

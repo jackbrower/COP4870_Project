@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jack\\Documents\\SPRING 2022\\C# Full Stack\\CSharpProject\\Library.TaskManagement\\Library.TaskManagement.csproj",
-      "projectName": "Library.TaskManagement",
-      "projectPath": "C:\\Users\\Jack\\Documents\\SPRING 2022\\C# Full Stack\\CSharpProject\\Library.TaskManagement\\Library.TaskManagement.csproj",
+      "projectUniqueName": "C:\\Users\\Jack\\Documents\\SPRING 2022\\C# Full Stack\\CSharpProject\\Library.TaskManagement\\Library.LearningManagement.csproj",
+      "projectName": "Library.LearningManagement",
+      "projectPath": "C:\\Users\\Jack\\Documents\\SPRING 2022\\C# Full Stack\\CSharpProject\\Library.TaskManagement\\Library.LearningManagement.csproj",
       "packagesPath": "C:\\Users\\Jack\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Jack\\Documents\\SPRING 2022\\C# Full Stack\\CSharpProject\\Library.TaskManagement\\obj\\",
       "projectStyle": "PackageReference",

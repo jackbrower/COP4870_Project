@@ -1,5 +1,5 @@
-﻿using Library.TaskManagement.Models;
-using Library.TaskManagement.Services;
+﻿using Library.LearningManagement.Models;
+using Library.LearningManagement.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace App.TaskManagement.Helpers
+namespace App.LearningManagement.Helpers
 {
     internal class StudentHelper
     {

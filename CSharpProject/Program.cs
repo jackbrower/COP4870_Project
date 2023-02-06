@@ -1,8 +1,8 @@
 ﻿
-using App.TaskManagement.Helpers;
-using Library.TaskManagement.Models;
+using App.LearningManagement.Helpers;
+using Library.LearningManagement.Models;
 
-namespace App.TaskManagement
+namespace App.LearningManagement
 {
     internal class Program
     {
@@ -23,12 +23,11 @@ namespace App.TaskManagement
                 Console.WriteLine("6. Update a course");
                 Console.WriteLine("7. List all courses");
                 Console.WriteLine("8. Search for a course");
-                Console.WriteLine("9. List a course's description");
+                Console.WriteLine("9. Create an assignment for a course");
                 Console.WriteLine("10. Add a student to a course");
                 Console.WriteLine("11. Remove a student from a course");
                 Console.WriteLine("12. List all courses a student is taking");
-                Console.WriteLine("13. Create an assignment for a course");
-                Console.WriteLine("14. Exit");
+                Console.WriteLine("13. Exit");
                 var input = Console.ReadLine();
 
                 if (int.TryParse(input, out var result))
@@ -67,25 +66,21 @@ namespace App.TaskManagement
                     }
                     else if (result == 9)
                     {
-
+                        //courseHelper.CreateCourseAssignment();
                     }
                     else if (result == 10)
                     {
-                        courseHelper.AddStudentToCourse();
+                        //courseHelper.AddStudentToCourse();
                     }
                     else if (result == 11)
                     {
-
+                        //courseHelper.RemoveStudentFromCourse();
                     }
                     else if (result == 12)
                     {
-
+                        //studentHelper.ListStudentsEnrolledCourses();
                     }
                     else if (result == 13)
-                    {
-
-                    }
-                    else if (result == 14)
                     {
                         cont = false;
                     }

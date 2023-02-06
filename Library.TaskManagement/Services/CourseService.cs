@@ -1,11 +1,11 @@
-﻿using Library.TaskManagement.Models;
+﻿using Library.LearningManagement.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Library.TaskManagement.Services
+namespace Library.LearningManagement.Services
 {
     public class CourseService
     {

@@ -2,28 +2,28 @@
   "version": 3,
   "targets": {
     "net7.0": {
-      "Library.TaskManagement/1.0.0": {
+      "Library.LearningManagement/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "compile": {
-          "bin/placeholder/Library.TaskManagement.dll": {}
+          "bin/placeholder/Library.LearningManagement.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Library.TaskManagement.dll": {}
+          "bin/placeholder/Library.LearningManagement.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "Library.TaskManagement/1.0.0": {
+    "Library.LearningManagement/1.0.0": {
       "type": "project",
-      "path": "../Library.TaskManagement/Library.TaskManagement.csproj",
-      "msbuildProject": "../Library.TaskManagement/Library.TaskManagement.csproj"
+      "path": "../Library.TaskManagement/Library.LearningManagement.csproj",
+      "msbuildProject": "../Library.TaskManagement/Library.LearningManagement.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "Library.TaskManagement >= 1.0.0"
+      "Library.LearningManagement >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -33,9 +33,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jack\\Documents\\SPRING 2022\\C# Full Stack\\CSharpProject\\CSharpProject\\App.TaskManagement.csproj",
-      "projectName": "App.TaskManagement",
-      "projectPath": "C:\\Users\\Jack\\Documents\\SPRING 2022\\C# Full Stack\\CSharpProject\\CSharpProject\\App.TaskManagement.csproj",
+      "projectUniqueName": "C:\\Users\\Jack\\Documents\\SPRING 2022\\C# Full Stack\\CSharpProject\\CSharpProject\\App.LearningManagement.csproj",
+      "projectName": "App.LearningManagement",
+      "projectPath": "C:\\Users\\Jack\\Documents\\SPRING 2022\\C# Full Stack\\CSharpProject\\CSharpProject\\App.LearningManagement.csproj",
       "packagesPath": "C:\\Users\\Jack\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Jack\\Documents\\SPRING 2022\\C# Full Stack\\CSharpProject\\CSharpProject\\obj\\",
       "projectStyle": "PackageReference",
@@ -59,8 +59,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Jack\\Documents\\SPRING 2022\\C# Full Stack\\CSharpProject\\Library.TaskManagement\\Library.TaskManagement.csproj": {
-              "projectPath": "C:\\Users\\Jack\\Documents\\SPRING 2022\\C# Full Stack\\CSharpProject\\Library.TaskManagement\\Library.TaskManagement.csproj"
+            "C:\\Users\\Jack\\Documents\\SPRING 2022\\C# Full Stack\\CSharpProject\\Library.TaskManagement\\Library.LearningManagement.csproj": {
+              "projectPath": "C:\\Users\\Jack\\Documents\\SPRING 2022\\C# Full Stack\\CSharpProject\\Library.TaskManagement\\Library.LearningManagement.csproj"
             }
           }
         }

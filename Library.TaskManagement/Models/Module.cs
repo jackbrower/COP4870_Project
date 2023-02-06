@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Library.TaskManagement.Models
+namespace Library.LearningManagement.Models
 {
     public class Module
     {

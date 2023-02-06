@@ -1,12 +1,12 @@
-﻿using Library.TaskManagement.Models;
-using Library.TaskManagement.Services;
+﻿using Library.LearningManagement.Models;
+using Library.LearningManagement.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace App.TaskManagement.Helpers
+namespace App.LearningManagement.Helpers
 {
     internal class CourseHelper
     {
@@ -67,6 +67,11 @@ namespace App.TaskManagement.Helpers
             }
         }
 
+        public void AddStudentToCourse()
+        {
+
+        }
+
         public void ListCourses()
         {
             courseService.Courses.ForEach(Console.WriteLine);
@@ -77,7 +82,13 @@ namespace App.TaskManagement.Helpers
             Console.WriteLine("Enter a query: ");
             var query = Console.ReadLine() ?? string.Empty;
 
-            courseService.Search(query).ToList().ForEach(Console.WriteLine);
+            var selectedCourse = courseService.Courses.FirstOrDefault(s => s.Code.Equals(query, StringComparison.InvariantCultureIgnoreCase));
+
+            if (selectedCourse != null)
+            {
+                Console.WriteLine($"{selectedCourse.Code} - {selectedCourse.Name}\n{selectedCourse.Description}\n");
+                selectedCourse.Roster.ForEach(Console.WriteLine);
+            }
         }
 
         public void UpdateCourseRecord()
@@ -92,11 +103,6 @@ namespace App.TaskManagement.Helpers
             {
                 CreateCourseRecord(selectedCourse);
             }
-        }
-
-        public void AddStudentToCourse()
-        {
-
         }
     }
 }
