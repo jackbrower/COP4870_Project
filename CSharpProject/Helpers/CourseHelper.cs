@@ -34,5 +34,10 @@ namespace App.TaskManagement.Helpers
 
             courseService.courseList.ForEach(Console.WriteLine);
         }
+
+        public void ListCourses()
+        {
+            courseService.Courses.ForEach(Console.WriteLine);
+        }
     }
 }

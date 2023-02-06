@@ -55,11 +55,11 @@ namespace App.TaskManagement
                     }
                     else if (result == 6)
                     {
-
+                        
                     }
                     else if (result == 7)
                     {
-
+                        courseHelper.ListCourses();
                     }
                     else if (result == 8)
                     {

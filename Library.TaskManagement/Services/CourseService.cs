@@ -15,5 +15,14 @@ namespace Library.TaskManagement.Services
         {
             courseList.Add(course);
         }
+
+        public List<Course> Courses
+        {
+            get
+            {
+                return courseList;
+            }
+        }
+
     }
 }
