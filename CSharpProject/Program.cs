@@ -16,10 +16,19 @@ namespace App.TaskManagement
             {
                 Console.WriteLine("Choose an action: ");
                 Console.WriteLine("1. Add student enrollment");
-                Console.WriteLine("2. List all students");
-                Console.WriteLine("3. Search for a student");
-                Console.WriteLine("4. Add a new course");
-                Console.WriteLine("5. Exit");
+                Console.WriteLine("2. Update a student");
+                Console.WriteLine("3. List all students");
+                Console.WriteLine("4. Search for a student");
+                Console.WriteLine("5. Add a new course");
+                Console.WriteLine("6. Update a course");
+                Console.WriteLine("7. List all courses");
+                Console.WriteLine("8. Search for a course");
+                Console.WriteLine("9. List a course's description");
+                Console.WriteLine("10. Add a student to a course");
+                Console.WriteLine("11. Remove a student from a course");
+                Console.WriteLine("12. List all courses a student is taking");
+                Console.WriteLine("13. Create an assignment for a course");
+                Console.WriteLine("14. Exit");
                 var input = Console.ReadLine();
 
                 if (int.TryParse(input, out var result))
@@ -30,17 +39,53 @@ namespace App.TaskManagement
                     }
                     else if (result == 2)
                     {
-                        studentHelper.ListStudents();
+                        studentHelper.UpdateStudentRecord();
                     }
                     else if (result == 3)
                     {
-                        studentHelper.SearchStudents();
+                        studentHelper.ListStudents();
                     }
                     else if (result == 4)
                     {
-                        courseHelper.CreateCourseRecord();
+                        studentHelper.SearchStudents();
                     }
                     else if (result == 5)
+                    {
+                        courseHelper.CreateCourseRecord();
+                    }
+                    else if (result == 6)
+                    {
+
+                    }
+                    else if (result == 7)
+                    {
+
+                    }
+                    else if (result == 8)
+                    {
+
+                    }
+                    else if (result == 9)
+                    {
+
+                    }
+                    else if (result == 10)
+                    {
+
+                    }
+                    else if (result == 11)
+                    {
+
+                    }
+                    else if (result == 12)
+                    {
+
+                    }
+                    else if (result == 13)
+                    {
+
+                    }
+                    else if (result == 14)
                     {
                         cont = false;
                     }

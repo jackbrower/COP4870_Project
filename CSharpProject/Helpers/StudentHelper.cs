@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace App.TaskManagement.Helpers
 {
@@ -12,7 +13,7 @@ namespace App.TaskManagement.Helpers
     {
         private StudentService studentService = new StudentService();
 
-        public void CreateStudentRecord()
+        public void CreateStudentRecord(Person? selectedStudent = null)
         {
             Console.WriteLine("What is the ID of the student?");
             var id = Console.ReadLine();
@@ -41,14 +42,22 @@ namespace App.TaskManagement.Helpers
                 classEnum = PersonClassification.Freshman;
             }
 
-            var student = new Person
+            bool isCreate = false;
+            if (selectedStudent == null)
             {
-                ID = int.Parse(id ?? "0"),
-                Name = name ?? string.Empty,
-                Classification = classEnum
-            };
+                isCreate = true;
+                selectedStudent = new Person();
+            }
 
-            studentService.Add(student);
+            selectedStudent.ID = int.Parse(id ?? "0");
+            selectedStudent.Name = name ?? string.Empty;
+            selectedStudent.Classification = classEnum;
+
+            if (isCreate)
+            {
+                studentService.Add(selectedStudent);
+            }
+            
         }
 
         public void ListStudents()
@@ -62,6 +71,23 @@ namespace App.TaskManagement.Helpers
             var query = Console.ReadLine() ?? string.Empty;
 
             studentService.Search(query).ToList().ForEach(Console.WriteLine);
+        }
+
+        public void UpdateStudentRecord()
+        {
+            Console.WriteLine("Select a student to update: ");
+            ListStudents();
+            
+            var selectionStr = Console.ReadLine();
+
+            if(int.TryParse(selectionStr, out int selectionInt))
+            {
+                var selectedStudent = studentService.StudentList.FirstOrDefault(s => s.ID == selectionInt);
+                if(selectedStudent != null)
+                {
+                    CreateStudentRecord(selectedStudent);
+                }
+            }
         }
     }
 }
