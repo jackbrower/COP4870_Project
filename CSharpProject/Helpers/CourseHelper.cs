@@ -12,7 +12,7 @@ namespace App.TaskManagement.Helpers
     {
         private CourseService courseService = new CourseService();
 
-        public void CreateCourseRecord()
+        public void CreateCourseRecord(Course? selectedCourse = null)
         {
             Console.WriteLine("What is the code of the course?");
             var code = Console.ReadLine() ?? string.Empty;
@@ -23,21 +23,40 @@ namespace App.TaskManagement.Helpers
             Console.WriteLine("What is the description of the course?");
             var desc = Console.ReadLine() ?? string.Empty;
 
-            var course = new Course
+            bool isNewCourse = false;
+            if(selectedCourse == null)
             {
-                Code = code,
-                Name = name,
-                Description = desc
-            };
+                isNewCourse = true;
+                selectedCourse = new Course();
+            }
 
-            courseService.Add(course);
+            selectedCourse.Code = code;
+            selectedCourse.Name = name;
+            selectedCourse.Description = desc;
 
-            courseService.courseList.ForEach(Console.WriteLine);
+            if (isNewCourse)
+            {
+                courseService.Add(selectedCourse);
+            }
         }
 
         public void ListCourses()
         {
             courseService.Courses.ForEach(Console.WriteLine);
+        }
+
+        public void UpdateCourseRecord()
+        {
+            Console.WriteLine("Enter the code of a course to update: ");
+            ListCourses();
+
+            var selection = Console.ReadLine();
+
+            var selectedCourse = courseService.Courses.FirstOrDefault(s => s.Code.Equals(selection, StringComparison.InvariantCultureIgnoreCase));
+            if (selectedCourse != null)
+            {
+                CreateCourseRecord(selectedCourse);
+            }
         }
     }
 }

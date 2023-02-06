@@ -55,7 +55,7 @@ namespace App.TaskManagement
                     }
                     else if (result == 6)
                     {
-                        
+                        courseHelper.UpdateCourseRecord();
                     }
                     else if (result == 7)
                     {
