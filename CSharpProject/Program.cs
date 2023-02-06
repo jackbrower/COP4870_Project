@@ -71,7 +71,7 @@ namespace App.TaskManagement
                     }
                     else if (result == 10)
                     {
-
+                        courseHelper.AddStudentToCourse();
                     }
                     else if (result == 11)
                     {
