@@ -25,10 +25,8 @@ namespace App.LearningManagement
                 Console.WriteLine("7. List all courses");
                 Console.WriteLine("8. Search for a course");
                 Console.WriteLine("9. Create an assignment for a course");
-                Console.WriteLine("10. Add a student to a course");
-                Console.WriteLine("11. Remove a student from a course");
-                Console.WriteLine("12. List all courses a student is taking");
-                Console.WriteLine("13. Exit");
+                Console.WriteLine("10. List all courses a student is taking");
+                Console.WriteLine("11. Exit");
                 var input = Console.ReadLine();
 
                 if (int.TryParse(input, out var result))
@@ -71,17 +69,9 @@ namespace App.LearningManagement
                     }
                     else if (result == 10)
                     {
-                        //courseHelper.AddStudentToCourse();
+                        studentHelper.ListCourses();
                     }
                     else if (result == 11)
-                    {
-                        //courseHelper.RemoveStudentFromCourse();
-                    }
-                    else if (result == 12)
-                    {
-                        //studentHelper.ListStudentsEnrolledCourses();
-                    }
-                    else if (result == 13)
                     {
                         cont = false;
                     }

@@ -10,11 +10,12 @@ namespace App.LearningManagement.Helpers
 {
     internal class CourseHelper
     {
-        private CourseService courseService = new CourseService();
+        private CourseService courseService;
         private StudentService studentService;
 
         public CourseHelper()
         {
+            courseService = CourseService.current;
             studentService = StudentService.current;
         }
 

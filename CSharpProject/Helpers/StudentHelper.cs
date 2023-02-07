@@ -11,10 +11,12 @@ namespace App.LearningManagement.Helpers
 {
     internal class StudentHelper
     {
+        private CourseService courseService;
         private StudentService studentService;
         
         public StudentHelper()
         {
+            courseService = CourseService.current;
             studentService = StudentService.current;
         }
 
@@ -93,6 +95,24 @@ namespace App.LearningManagement.Helpers
                     CreateStudentRecord(selectedStudent);
                 }
             }
+        }
+
+        public void ListCourses()
+        {
+            Console.WriteLine("Select a student to see courses for (ID): ");
+            ListStudents();
+            
+            var selection = Console.ReadLine() ?? string.Empty;
+            var student = studentService.StudentList.FirstOrDefault(s => s.ID == Int32.Parse(selection));
+
+            if (student == null) return;
+            courseService.Courses.ForEach(c =>
+            {
+                if (c.Roster.Contains(student))
+                {
+                    Console.WriteLine(c);
+                }
+            });
         }
     }
 }

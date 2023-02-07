@@ -9,7 +9,27 @@ namespace Library.LearningManagement.Services
 {
     public class CourseService
     {
-        public List<Course> courseList = new List<Course>();
+        public List<Course> courseList;
+
+        private static CourseService? _instance;
+
+        private CourseService()
+        {
+            courseList = new List<Course>();
+        }
+
+        public static CourseService current
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new CourseService();
+                }
+
+                return _instance;
+            }
+        }
 
         public void Add(Course course)
         {
