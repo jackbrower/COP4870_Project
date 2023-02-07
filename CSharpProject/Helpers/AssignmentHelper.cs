@@ -37,7 +37,8 @@ public class AssignmentHelper
             Console.WriteLine("Which course is this assignment for?");
             var course = Console.ReadLine() ?? string.Empty;
 
-            Course courseret = courseService.Courses.FirstOrDefault(s => s.Code.Equals(course, StringComparison.InvariantCultureIgnoreCase));
+            Course courseret = courseService.Courses.FirstOrDefault(s => s.Code.Equals(course, StringComparison.InvariantCultureIgnoreCase))
+                ?? throw new ArgumentException("Course invalid");
 
             var assignment = new Assignment()
             {
@@ -47,8 +48,6 @@ public class AssignmentHelper
                 DueDate = dateconv
             };
 
-            if (courseret == null) return;
-            
             CourseService.AddAssignment(courseret, assignment);
         }
 }
