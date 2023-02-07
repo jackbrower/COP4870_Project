@@ -1,12 +1,24 @@
-C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\Library.TaskManagement\bin\Debug\net7.0\Library.LearningManagement.deps.json
-C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\Library.TaskManagement\bin\Debug\net7.0\Library.LearningManagement.dll
-C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\Library.TaskManagement\bin\Debug\net7.0\Library.LearningManagement.pdb
-C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\Library.TaskManagement\obj\Debug\net7.0\Library.LearningManagement.csproj.AssemblyReference.cache
-C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\Library.TaskManagement\obj\Debug\net7.0\Library.LearningManagement.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\Library.TaskManagement\obj\Debug\net7.0\Library.LearningManagement.AssemblyInfoInputs.cache
-C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\Library.TaskManagement\obj\Debug\net7.0\Library.LearningManagement.AssemblyInfo.cs
-C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\Library.TaskManagement\obj\Debug\net7.0\Library.LearningManagement.csproj.CoreCompileInputs.cache
-C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\Library.TaskManagement\obj\Debug\net7.0\Library.LearningManagement.dll
-C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\Library.TaskManagement\obj\Debug\net7.0\refint\Library.LearningManagement.dll
-C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\Library.TaskManagement\obj\Debug\net7.0\Library.LearningManagement.pdb
-C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\Library.TaskManagement\obj\Debug\net7.0\ref\Library.LearningManagement.dll
+C:/Users/Jack/Documents/SPRING 2022/C# Full Stack/CSharpProject/Library.TaskManagement/bin/Debug/net7.0/Library.LearningManagement.deps.json
+C:/Users/Jack/Documents/SPRING 2022/C# Full Stack/CSharpProject/Library.TaskManagement/bin/Debug/net7.0/Library.LearningManagement.dll
+C:/Users/Jack/Documents/SPRING 2022/C# Full Stack/CSharpProject/Library.TaskManagement/bin/Debug/net7.0/Library.LearningManagement.pdb
+C:/Users/Jack/Documents/SPRING 2022/C# Full Stack/CSharpProject/Library.TaskManagement/obj/Debug/net7.0/Library.LearningManagement.csproj.AssemblyReference.cache
+C:/Users/Jack/Documents/SPRING 2022/C# Full Stack/CSharpProject/Library.TaskManagement/obj/Debug/net7.0/Library.LearningManagement.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/Jack/Documents/SPRING 2022/C# Full Stack/CSharpProject/Library.TaskManagement/obj/Debug/net7.0/Library.LearningManagement.AssemblyInfoInputs.cache
+C:/Users/Jack/Documents/SPRING 2022/C# Full Stack/CSharpProject/Library.TaskManagement/obj/Debug/net7.0/Library.LearningManagement.AssemblyInfo.cs
+C:/Users/Jack/Documents/SPRING 2022/C# Full Stack/CSharpProject/Library.TaskManagement/obj/Debug/net7.0/Library.LearningManagement.csproj.CoreCompileInputs.cache
+C:/Users/Jack/Documents/SPRING 2022/C# Full Stack/CSharpProject/Library.TaskManagement/obj/Debug/net7.0/Library.LearningManagement.dll
+C:/Users/Jack/Documents/SPRING 2022/C# Full Stack/CSharpProject/Library.TaskManagement/obj/Debug/net7.0/refint/Library.LearningManagement.dll
+C:/Users/Jack/Documents/SPRING 2022/C# Full Stack/CSharpProject/Library.TaskManagement/obj/Debug/net7.0/Library.LearningManagement.pdb
+C:/Users/Jack/Documents/SPRING 2022/C# Full Stack/CSharpProject/Library.TaskManagement/obj/Debug/net7.0/ref/Library.LearningManagement.dll
+/home/jack/doc/Spring2023/CSFullStack/COP4870_Project/Library.TaskManagement/bin/Debug/net7.0/Library.LearningManagement.deps.json
+/home/jack/doc/Spring2023/CSFullStack/COP4870_Project/Library.TaskManagement/bin/Debug/net7.0/Library.LearningManagement.dll
+/home/jack/doc/Spring2023/CSFullStack/COP4870_Project/Library.TaskManagement/bin/Debug/net7.0/Library.LearningManagement.pdb
+/home/jack/doc/Spring2023/CSFullStack/COP4870_Project/Library.TaskManagement/obj/Debug/net7.0/Library.LearningManagement.csproj.AssemblyReference.cache
+/home/jack/doc/Spring2023/CSFullStack/COP4870_Project/Library.TaskManagement/obj/Debug/net7.0/Library.LearningManagement.GeneratedMSBuildEditorConfig.editorconfig
+/home/jack/doc/Spring2023/CSFullStack/COP4870_Project/Library.TaskManagement/obj/Debug/net7.0/Library.LearningManagement.AssemblyInfoInputs.cache
+/home/jack/doc/Spring2023/CSFullStack/COP4870_Project/Library.TaskManagement/obj/Debug/net7.0/Library.LearningManagement.AssemblyInfo.cs
+/home/jack/doc/Spring2023/CSFullStack/COP4870_Project/Library.TaskManagement/obj/Debug/net7.0/Library.LearningManagement.csproj.CoreCompileInputs.cache
+/home/jack/doc/Spring2023/CSFullStack/COP4870_Project/Library.TaskManagement/obj/Debug/net7.0/Library.LearningManagement.dll
+/home/jack/doc/Spring2023/CSFullStack/COP4870_Project/Library.TaskManagement/obj/Debug/net7.0/refint/Library.LearningManagement.dll
+/home/jack/doc/Spring2023/CSFullStack/COP4870_Project/Library.TaskManagement/obj/Debug/net7.0/Library.LearningManagement.pdb
+/home/jack/doc/Spring2023/CSFullStack/COP4870_Project/Library.TaskManagement/obj/Debug/net7.0/ref/Library.LearningManagement.dll

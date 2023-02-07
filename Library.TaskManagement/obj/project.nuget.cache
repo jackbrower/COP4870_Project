@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "utwt2lNQRlqQoWOkXRN6Rp+OfbUnqK2kwb6yyOHAJjHkDWC04OvXEa/OUP3gfCtdHcuL7A8+oZWpyTzst0lmuw==",
+  "dgSpecHash": "XMcD02VBoSejERrh8wc0oA3KRvj/wXVgb74WpcZnxXXD+45g2QvMlO3mX7hNC5B0PCb8yA2NptHlv2Uzn5uraA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jack\\Documents\\SPRING 2022\\C# Full Stack\\CSharpProject\\Library.TaskManagement\\Library.LearningManagement.csproj",
+  "projectFilePath": "/home/jack/doc/Spring2023/CSFullStack/COP4870_Project/Library.TaskManagement/Library.LearningManagement.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

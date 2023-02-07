@@ -1,18 +1,36 @@
-C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\CSharpProject\bin\Debug\net7.0\App.LearningManagement.exe
-C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\CSharpProject\bin\Debug\net7.0\App.LearningManagement.deps.json
-C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\CSharpProject\bin\Debug\net7.0\App.LearningManagement.runtimeconfig.json
-C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\CSharpProject\bin\Debug\net7.0\App.LearningManagement.dll
-C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\CSharpProject\bin\Debug\net7.0\App.LearningManagement.pdb
-C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\CSharpProject\bin\Debug\net7.0\Library.LearningManagement.dll
-C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\CSharpProject\bin\Debug\net7.0\Library.LearningManagement.pdb
-C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\CSharpProject\obj\Debug\net7.0\App.LearningManagement.csproj.AssemblyReference.cache
-C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\CSharpProject\obj\Debug\net7.0\App.LearningManagement.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\CSharpProject\obj\Debug\net7.0\App.LearningManagement.AssemblyInfoInputs.cache
-C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\CSharpProject\obj\Debug\net7.0\App.LearningManagement.AssemblyInfo.cs
-C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\CSharpProject\obj\Debug\net7.0\App.LearningManagement.csproj.CoreCompileInputs.cache
-C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\CSharpProject\obj\Debug\net7.0\App.LearningManagement.csproj.CopyComplete
-C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\CSharpProject\obj\Debug\net7.0\App.LearningManagement.dll
-C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\CSharpProject\obj\Debug\net7.0\refint\App.LearningManagement.dll
-C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\CSharpProject\obj\Debug\net7.0\App.LearningManagement.pdb
-C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\CSharpProject\obj\Debug\net7.0\App.LearningManagement.genruntimeconfig.cache
-C:\Users\Jack\Documents\SPRING 2022\C# Full Stack\CSharpProject\CSharpProject\obj\Debug\net7.0\ref\App.LearningManagement.dll
+C:/Users/Jack/Documents/SPRING 2022/C# Full Stack/CSharpProject/CSharpProject/bin/Debug/net7.0/App.LearningManagement.exe
+C:/Users/Jack/Documents/SPRING 2022/C# Full Stack/CSharpProject/CSharpProject/bin/Debug/net7.0/App.LearningManagement.deps.json
+C:/Users/Jack/Documents/SPRING 2022/C# Full Stack/CSharpProject/CSharpProject/bin/Debug/net7.0/App.LearningManagement.runtimeconfig.json
+C:/Users/Jack/Documents/SPRING 2022/C# Full Stack/CSharpProject/CSharpProject/bin/Debug/net7.0/App.LearningManagement.dll
+C:/Users/Jack/Documents/SPRING 2022/C# Full Stack/CSharpProject/CSharpProject/bin/Debug/net7.0/App.LearningManagement.pdb
+C:/Users/Jack/Documents/SPRING 2022/C# Full Stack/CSharpProject/CSharpProject/bin/Debug/net7.0/Library.LearningManagement.dll
+C:/Users/Jack/Documents/SPRING 2022/C# Full Stack/CSharpProject/CSharpProject/bin/Debug/net7.0/Library.LearningManagement.pdb
+C:/Users/Jack/Documents/SPRING 2022/C# Full Stack/CSharpProject/CSharpProject/obj/Debug/net7.0/App.LearningManagement.csproj.AssemblyReference.cache
+C:/Users/Jack/Documents/SPRING 2022/C# Full Stack/CSharpProject/CSharpProject/obj/Debug/net7.0/App.LearningManagement.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/Jack/Documents/SPRING 2022/C# Full Stack/CSharpProject/CSharpProject/obj/Debug/net7.0/App.LearningManagement.AssemblyInfoInputs.cache
+C:/Users/Jack/Documents/SPRING 2022/C# Full Stack/CSharpProject/CSharpProject/obj/Debug/net7.0/App.LearningManagement.AssemblyInfo.cs
+C:/Users/Jack/Documents/SPRING 2022/C# Full Stack/CSharpProject/CSharpProject/obj/Debug/net7.0/App.LearningManagement.csproj.CoreCompileInputs.cache
+C:/Users/Jack/Documents/SPRING 2022/C# Full Stack/CSharpProject/CSharpProject/obj/Debug/net7.0/App.LearningManagement.csproj.CopyComplete
+C:/Users/Jack/Documents/SPRING 2022/C# Full Stack/CSharpProject/CSharpProject/obj/Debug/net7.0/App.LearningManagement.dll
+C:/Users/Jack/Documents/SPRING 2022/C# Full Stack/CSharpProject/CSharpProject/obj/Debug/net7.0/refint/App.LearningManagement.dll
+C:/Users/Jack/Documents/SPRING 2022/C# Full Stack/CSharpProject/CSharpProject/obj/Debug/net7.0/App.LearningManagement.pdb
+C:/Users/Jack/Documents/SPRING 2022/C# Full Stack/CSharpProject/CSharpProject/obj/Debug/net7.0/App.LearningManagement.genruntimeconfig.cache
+C:/Users/Jack/Documents/SPRING 2022/C# Full Stack/CSharpProject/CSharpProject/obj/Debug/net7.0/ref/App.LearningManagement.dll
+/home/jack/doc/Spring2023/CSFullStack/COP4870_Project/CSharpProject/bin/Debug/net7.0/App.LearningManagement
+/home/jack/doc/Spring2023/CSFullStack/COP4870_Project/CSharpProject/bin/Debug/net7.0/App.LearningManagement.deps.json
+/home/jack/doc/Spring2023/CSFullStack/COP4870_Project/CSharpProject/bin/Debug/net7.0/App.LearningManagement.runtimeconfig.json
+/home/jack/doc/Spring2023/CSFullStack/COP4870_Project/CSharpProject/bin/Debug/net7.0/App.LearningManagement.dll
+/home/jack/doc/Spring2023/CSFullStack/COP4870_Project/CSharpProject/bin/Debug/net7.0/App.LearningManagement.pdb
+/home/jack/doc/Spring2023/CSFullStack/COP4870_Project/CSharpProject/bin/Debug/net7.0/Library.LearningManagement.dll
+/home/jack/doc/Spring2023/CSFullStack/COP4870_Project/CSharpProject/bin/Debug/net7.0/Library.LearningManagement.pdb
+/home/jack/doc/Spring2023/CSFullStack/COP4870_Project/CSharpProject/obj/Debug/net7.0/App.LearningManagement.csproj.AssemblyReference.cache
+/home/jack/doc/Spring2023/CSFullStack/COP4870_Project/CSharpProject/obj/Debug/net7.0/App.LearningManagement.GeneratedMSBuildEditorConfig.editorconfig
+/home/jack/doc/Spring2023/CSFullStack/COP4870_Project/CSharpProject/obj/Debug/net7.0/App.LearningManagement.AssemblyInfoInputs.cache
+/home/jack/doc/Spring2023/CSFullStack/COP4870_Project/CSharpProject/obj/Debug/net7.0/App.LearningManagement.AssemblyInfo.cs
+/home/jack/doc/Spring2023/CSFullStack/COP4870_Project/CSharpProject/obj/Debug/net7.0/App.LearningManagement.csproj.CoreCompileInputs.cache
+/home/jack/doc/Spring2023/CSFullStack/COP4870_Project/CSharpProject/obj/Debug/net7.0/App.LearningManagement.csproj.CopyComplete
+/home/jack/doc/Spring2023/CSFullStack/COP4870_Project/CSharpProject/obj/Debug/net7.0/App.LearningManagement.dll
+/home/jack/doc/Spring2023/CSFullStack/COP4870_Project/CSharpProject/obj/Debug/net7.0/refint/App.LearningManagement.dll
+/home/jack/doc/Spring2023/CSFullStack/COP4870_Project/CSharpProject/obj/Debug/net7.0/App.LearningManagement.pdb
+/home/jack/doc/Spring2023/CSFullStack/COP4870_Project/CSharpProject/obj/Debug/net7.0/App.LearningManagement.genruntimeconfig.cache
+/home/jack/doc/Spring2023/CSFullStack/COP4870_Project/CSharpProject/obj/Debug/net7.0/ref/App.LearningManagement.dll

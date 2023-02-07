@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TSWeeIFVcQymYajbTsHNFsBZAmH+itJpl81ZMEM3rpzFUC6tttW7KejVsFo5qFX9pGdz5tZJquZW10EDtSGMOA==",
+  "dgSpecHash": "QdLqLEw+fDNByHbqkz1qK9KC82mt9R0+2TKYAH90TJh486WWg7Z96AKHSR27fG8EhWMg5JlKYylvN6T7+YuLXg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jack\\Documents\\SPRING 2022\\C# Full Stack\\CSharpProject\\CSharpProject\\App.LearningManagement.csproj",
+  "projectFilePath": "/home/jack/doc/Spring2023/CSFullStack/COP4870_Project/CSharpProject/App.LearningManagement.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -11,7 +11,12 @@ namespace App.LearningManagement.Helpers
 {
     internal class StudentHelper
     {
-        private StudentService studentService = new StudentService();
+        private StudentService studentService;
+        
+        public StudentHelper()
+        {
+            studentService = StudentService.current;
+        }
 
         public void CreateStudentRecord(Person? selectedStudent = null)
         {

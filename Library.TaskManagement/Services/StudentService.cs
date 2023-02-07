@@ -9,7 +9,27 @@ namespace Library.LearningManagement.Services
 {
     public class StudentService
     {
-        public List<Person> StudentList = new List<Person>();
+        public List<Person> StudentList;
+
+        private static StudentService? _instance;
+
+        private StudentService()
+        {
+            StudentList = new List<Person>();
+        }
+
+        public static StudentService current
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new StudentService();
+                }
+
+                return _instance;
+            }
+        }
 
         public void Add(Person student)
         {
