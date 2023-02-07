@@ -48,7 +48,12 @@ namespace Library.LearningManagement.Services
         {
             return courseList.Where(c => c.Name.ToUpper().Contains(query.ToUpper())
             || c.Description.ToUpper().Contains(query.ToUpper())
-            || c.Code.ToUpper().Contains(query.ToUpper())   );
+            || c.Code.ToUpper().Contains(query.ToUpper()));
+        }
+        
+        public static void AddAssignment(Course course, Assignment assignment)
+        {
+            course.Assignments.Add(assignment);
         }
     }
 }

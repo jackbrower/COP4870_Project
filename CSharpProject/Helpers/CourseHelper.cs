@@ -77,11 +77,6 @@ namespace App.LearningManagement.Helpers
             }
         }
 
-        public void AddStudentToCourse()
-        {
-
-        }
-
         public void ListCourses()
         {
             courseService.Courses.ForEach(Console.WriteLine);

@@ -11,6 +11,7 @@ namespace App.LearningManagement
         {
             var studentHelper = new StudentHelper();
             var courseHelper = new CourseHelper();
+            var assignmentHelper = new AssignmentHelper();
 
             bool cont = true;
             while (cont)
@@ -65,7 +66,7 @@ namespace App.LearningManagement
                     }
                     else if (result == 9)
                     {
-                        //courseHelper.CreateCourseAssignment();
+                        assignmentHelper.CreateAssignment();
                     }
                     else if (result == 10)
                     {
