@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MyApp
+namespace COP4870_Project
 {
     public class ListNavigator<T>
     {

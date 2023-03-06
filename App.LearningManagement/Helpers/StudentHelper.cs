@@ -1,6 +1,6 @@
 ﻿using Library.LearningManagement.Models;
 using Library.LearningManagement.Services;
-using MyApp;
+using COP4870_Project;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;

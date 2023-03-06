@@ -37,8 +37,17 @@ namespace App.LearningManagement.Helpers
 
             if(choice.Equals("Y", StringComparison.InvariantCultureIgnoreCase))
             {
+                CourseTag:
                 Console.WriteLine("What is the code of the course?");
                 selectedCourse.Code = Console.ReadLine() ?? string.Empty;
+
+                var checkCourse = courseService.Courses.FirstOrDefault(c => c.Code.Equals(selectedCourse.Code, StringComparison.InvariantCultureIgnoreCase));
+                // TODO: Dont use goto
+                if (checkCourse != null)
+                {
+                    Console.WriteLine("Course code already exists.");
+                    goto CourseTag;
+                }
             }
 
             if(!isNewCourse)
@@ -369,6 +378,110 @@ namespace App.LearningManagement.Helpers
                 if (selectedAssignment != null)
                 {
                     selectedCourse.Assignments.Remove(selectedAssignment);
+                }
+            }
+        }
+        private Announcements CreateAnnouncement(Course c)
+        {
+            //Name
+            Console.WriteLine("Name:");
+            var name = Console.ReadLine() ?? string.Empty;
+            //Author
+            // TODO: Make author a Person and not a string
+            Console.WriteLine("Author:");
+            var author = Console.ReadLine() ?? string.Empty;
+            //Description
+            Console.WriteLine("Body:");
+            var body = Console.ReadLine() ?? string.Empty;
+
+            var announcement = new Announcements()
+            {
+                Name = name,
+                Author = author,
+                Body = body
+            };
+
+            return announcement; 
+        }
+        public void AddAnnouncement()
+        {
+            Console.WriteLine("Enter the code for the course to add the announcement to:");
+            courseService.Courses.ForEach(Console.WriteLine);
+            var selection = Console.ReadLine();
+
+            var selectedCourse = courseService.Courses.FirstOrDefault(s => s.Code.Equals(selection, StringComparison.InvariantCultureIgnoreCase));
+            if (selectedCourse != null)
+            {
+                var announcement = CreateAnnouncement(selectedCourse);
+                if (selectedCourse.Announcements == null)
+                {
+                    selectedCourse.Announcements = new List<Announcements>();
+                }
+                selectedCourse.Announcements.Add(announcement);
+            }
+        }
+        public void RemoveAnnouncement()
+        {
+            Console.WriteLine("Enter the code for the course:");
+            courseService.Courses.ForEach(Console.WriteLine);
+            var selection = Console.ReadLine();
+
+            var selectedCourse = courseService.Courses.FirstOrDefault(s => s.Code.Equals(selection, StringComparison.InvariantCultureIgnoreCase));
+
+            if (selectedCourse != null)
+            {
+                Console.WriteLine("Choose an assignment to delete:");
+                selectedCourse.Announcements.ForEach(Console.WriteLine);
+                var selectionStr = Console.ReadLine() ?? string.Empty;
+                var selectionInt = int.Parse(selectionStr);
+                var selectedAssignment = selectedCourse.Assignments.FirstOrDefault(m => m.Id == selectionInt);
+                if (selectedAssignment != null)
+                {
+                    selectedCourse.Assignments.Remove(selectedAssignment);
+                }
+            }
+        }
+        public void UpdateAnnouncement()
+        {
+            Console.WriteLine("Enter the code for the course:");
+            courseService.Courses.ForEach(Console.WriteLine);
+            var selection = Console.ReadLine();
+
+            var selectedCourse = courseService.Courses.FirstOrDefault(s => s.Code.Equals(selection, StringComparison.InvariantCultureIgnoreCase));
+            
+            if(selectedCourse != null && selectedCourse.Announcements.Any())
+            {
+                Console.WriteLine("Enter the name for the announcement to update:");
+                selectedCourse.Announcements.ForEach(Console.WriteLine);
+
+                selection = Console.ReadLine();
+                var selectedAnnouncement = selectedCourse
+                    .Announcements
+                    .FirstOrDefault(a => a.Name.Equals(selection, StringComparison.InvariantCultureIgnoreCase));
+
+                if(selectedAnnouncement != null)
+                {
+                    Console.WriteLine("Would you like to modify the announcement name?");
+                    selection = Console.ReadLine();
+                    if (selection?.Equals("Y", StringComparison.InvariantCultureIgnoreCase) ?? false)
+                    {
+                        Console.WriteLine("Name:");
+                        selectedAnnouncement.Name = Console.ReadLine();
+                    }
+                    Console.WriteLine("Would you like to modify the announcement body?");
+                    selection = Console.ReadLine();
+                    if (selection?.Equals("Y", StringComparison.InvariantCultureIgnoreCase) ?? false)
+                    {
+                        Console.WriteLine("Description:");
+                        selectedAnnouncement.Body = Console.ReadLine();
+                    }
+                    Console.WriteLine("Would you like to modify the announcement author?");
+                    selection = Console.ReadLine();
+                    if (selection?.Equals("Y", StringComparison.InvariantCultureIgnoreCase) ?? false)
+                    {
+                        Console.WriteLine("Author:");
+                        selectedAnnouncement.Author = Console.ReadLine();
+                    }
                 }
             }
         }

@@ -14,6 +14,7 @@ namespace Library.LearningManagement.Models
         public List<Person> Roster { get; set; }
         public List<Assignment> Assignments { get; set; }
         public List<Module> Modules { get; set; }
+        public List<Announcements> Announcements { get; set; }
 
         public Course() { 
             Code = string.Empty;
