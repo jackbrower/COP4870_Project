@@ -1,5 +1,6 @@
 ﻿using Library.LearningManagement.Models;
 using Library.LearningManagement.Services;
+using MyApp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
@@ -13,11 +14,14 @@ namespace App.LearningManagement.Helpers
     {
         private StudentService studentService;
         private CourseService courseService;
+        private ListNavigator<Person> studentNavigator;
 
         public StudentHelper()
         {
-            studentService= StudentService.Current;
-            courseService= CourseService.Current;
+            studentService = StudentService.Current;
+            courseService = CourseService.Current;
+
+            studentNavigator = new ListNavigator<Person>(studentService.Students, 2);
         }
 
         public void CreateStudentRecord(Person? selectedStudent = null)
@@ -31,11 +35,11 @@ namespace App.LearningManagement.Helpers
                 Console.WriteLine("(T)eachingAssistant");
                 Console.WriteLine("(I)nstructor");
                 var choice = Console.ReadLine() ?? string.Empty;
-                if(string.IsNullOrEmpty(choice))
+                if (string.IsNullOrEmpty(choice))
                 {
                     return;
                 }
-                if(choice.Equals("S", StringComparison.InvariantCultureIgnoreCase))
+                if (choice.Equals("S", StringComparison.InvariantCultureIgnoreCase))
                 {
                     selectedStudent = new Student();
                 } else if (choice.Equals("T", StringComparison.InvariantCultureIgnoreCase))
@@ -47,8 +51,6 @@ namespace App.LearningManagement.Helpers
                 }
             }
 
-            Console.WriteLine("What is the id of the student?");
-            var id = Console.ReadLine();
             Console.WriteLine("What is the name of the student?");
             var name = Console.ReadLine();
             if (selectedStudent is Student)
@@ -73,7 +75,6 @@ namespace App.LearningManagement.Helpers
                 if (studentRecord != null)
                 {
                     studentRecord.Classification = classEnum;
-                    studentRecord.Id = int.Parse(id ?? "0");
                     studentRecord.Name = name ?? string.Empty;
 
                     if (isCreate)
@@ -84,7 +85,6 @@ namespace App.LearningManagement.Helpers
             } else {
                 if (selectedStudent != null)
                 {
-                    selectedStudent.Id = int.Parse(id ?? "0");
                     selectedStudent.Name = name ?? string.Empty;
                     if (isCreate)
                     {
@@ -101,26 +101,74 @@ namespace App.LearningManagement.Helpers
 
             var selectionStr = Console.ReadLine();
 
-            if(int.TryParse(selectionStr, out int selectionInt))
+            if (int.TryParse(selectionStr, out int selectionInt))
             {
                 var selectedStudent = studentService.Students.FirstOrDefault(s => s.Id == selectionInt);
-                if(selectedStudent != null)
+                if (selectedStudent != null)
                 {
                     CreateStudentRecord(selectedStudent);
                 }
             }
         }
 
+        private void NavigateStudents(string? query = null)
+        {
+            ListNavigator<Person>? currentNavigator = null;
+            if(query == null)
+            {
+                currentNavigator = studentNavigator;
+            }else
+            {
+                currentNavigator = new ListNavigator<Person>(studentService.Search(query).ToList(), 2);
+            }
+            
+            bool keepPaging = true;
+            while(keepPaging)
+            {
+                foreach (var pair in currentNavigator.GetCurrentPage())
+                {
+                    Console.WriteLine($"{pair.Key}. {pair.Value}");
+                }
+
+                if (currentNavigator.HasPreviousPage)
+                {
+                    Console.WriteLine("P. Previous Page");
+                }
+
+                if (currentNavigator.HasNextPage)
+                {
+                    Console.WriteLine("N. Next Page");
+                }
+
+                Console.WriteLine("Make a selection:");
+                var selectionStr = Console.ReadLine();
+
+                if ((selectionStr?.Equals("P", StringComparison.InvariantCultureIgnoreCase) ?? false)
+                    || (selectionStr?.Equals("N", StringComparison.InvariantCultureIgnoreCase) ?? false)) {
+                    //Navigate through pages
+                    if(selectionStr.Equals("P", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        currentNavigator.GoBackward();
+                    }
+                    else if (selectionStr.Equals("N", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        currentNavigator.GoForward();
+                    }
+                }
+                else
+                {
+                    var selectionInt = int.Parse(selectionStr ?? "0");
+
+                    Console.WriteLine("Student Course List:");
+                    courseService.Courses.Where(c => c.Roster.Any(s => s.Id == selectionInt)).ToList().ForEach(Console.WriteLine);
+                    keepPaging = false;
+                }
+            }
+        }
+
         public void ListStudents()
         {
-            studentService.Students.ForEach(Console.WriteLine);
-
-            Console.WriteLine("Select a student:");
-            var selectionStr = Console.ReadLine();
-            var selectionInt = int.Parse(selectionStr ?? "0");
-
-            Console.WriteLine("Student Course List:");
-            courseService.Courses.Where(c => c.Roster.Any(s => s.Id == selectionInt)).ToList().ForEach(Console.WriteLine);
+            NavigateStudents();    
         }
 
         public void SearchStudents()
@@ -128,12 +176,13 @@ namespace App.LearningManagement.Helpers
             Console.WriteLine("Enter a query:");
             var query = Console.ReadLine() ?? string.Empty;
 
-            studentService.Search(query).ToList().ForEach(Console.WriteLine);
-            var selectionStr = Console.ReadLine();
-            var selectionInt = int.Parse(selectionStr ?? "0");
+            //studentService.Search(query).ToList().ForEach(Console.WriteLine);
+            //var selectionStr = Console.ReadLine();
+            //var selectionInt = int.Parse(selectionStr ?? "0");
 
-            Console.WriteLine("Student Course List:");
-            courseService.Courses.Where(c => c.Roster.Any(s => s.Id == selectionInt)).ToList().ForEach(Console.WriteLine);
+            //Console.WriteLine("Student Course List:");
+            //courseService.Courses.Where(c => c.Roster.Any(s => s.Id == selectionInt)).ToList().ForEach(Console.WriteLine);
+            NavigateStudents(query);
         }
     }
 }
