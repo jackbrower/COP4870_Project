@@ -85,6 +85,13 @@ namespace App.LearningManagement.Helpers
                 SetupAssignments(selectedCourse);
                 SetupModules(selectedCourse);
             }
+
+            if (!isNewCourse)
+            {
+                Console.WriteLine("How many credit hours is this course?");
+                var preconvInt = Console.ReadLine() ?? string.Empty;
+                selectedCourse.CreditHours = Int32.Parse(preconvInt);
+            }
             
             
             if(isNewCourse)

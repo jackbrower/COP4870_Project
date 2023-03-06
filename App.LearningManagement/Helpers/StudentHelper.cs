@@ -166,6 +166,15 @@ namespace App.LearningManagement.Helpers
             }
         }
 
+        public float GetGPA(Student student)
+        {
+            float gpa = 0;
+            // Get a list of all courses a student has
+            // Go through to see which 
+
+            return gpa;
+        }
+
         public void ListStudents()
         {
             NavigateStudents();    
