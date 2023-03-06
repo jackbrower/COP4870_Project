@@ -1,1 +1,6 @@
 .vs
+.idea
+Library.LearningManagement/bin
+Library.LearningManagement/obj
+App.LearningManagement/bin
+App.LearningManagement/obj
