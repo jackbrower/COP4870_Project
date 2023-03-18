@@ -3,6 +3,7 @@ using Library.LearningManagement.Services;
 using COP4870_Project;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
@@ -14,17 +15,17 @@ namespace App.LearningManagement.Helpers
     {
         private StudentService studentService;
         private CourseService courseService;
-        private ListNavigator<Person> studentNavigator;
+        private ListNavigator<Student> studentNavigator;
 
         public StudentHelper()
         {
             studentService = StudentService.Current;
             courseService = CourseService.Current;
 
-            studentNavigator = new ListNavigator<Person>(studentService.Students, 2);
+            studentNavigator = new ListNavigator<Student>(studentService.Students, 2);
         }
 
-        public void CreateStudentRecord(Person? selectedStudent = null)
+        public void CreateStudentRecord(Student? selectedStudent = null)
         {
             bool isCreate = false;
             if (selectedStudent == null)
@@ -32,23 +33,19 @@ namespace App.LearningManagement.Helpers
                 isCreate = true;
                 Console.WriteLine("What type of person would you like to add?");
                 Console.WriteLine("(S)tudent");
-                Console.WriteLine("(T)eachingAssistant");
-                Console.WriteLine("(I)nstructor");
+                //Console.WriteLine("(T)eachingAssistant");
+                //Console.WriteLine("(I)nstructor");
                 var choice = Console.ReadLine() ?? string.Empty;
                 if (string.IsNullOrEmpty(choice))
                 {
                     return;
                 }
+
                 if (choice.Equals("S", StringComparison.InvariantCultureIgnoreCase))
                 {
                     selectedStudent = new Student();
-                } else if (choice.Equals("T", StringComparison.InvariantCultureIgnoreCase))
-                {
-                    selectedStudent = new TeachingAssistant();
-                } else if (choice.Equals("I", StringComparison.InvariantCultureIgnoreCase))
-                {
-                    selectedStudent = new Instructor();
                 }
+                // TODO: Reimplement TA and instructor 
             }
 
             Console.WriteLine("What is the name of the student?");
@@ -113,13 +110,13 @@ namespace App.LearningManagement.Helpers
 
         private void NavigateStudents(string? query = null)
         {
-            ListNavigator<Person>? currentNavigator = null;
+            ListNavigator<Student>? currentNavigator = null;
             if(query == null)
             {
                 currentNavigator = studentNavigator;
             }else
             {
-                currentNavigator = new ListNavigator<Person>(studentService.Search(query).ToList(), 2);
+                currentNavigator = new ListNavigator<Student>(studentService.Search(query).ToList(), 2);
             }
             
             bool keepPaging = true;
@@ -166,13 +163,41 @@ namespace App.LearningManagement.Helpers
             }
         }
 
-        public float GetGPA(Student student)
+        public double CalcGPA(Student student)
         {
-            float gpa = 0;
-            // Get a list of all courses a student has
-            // Go through to see which 
+            double TotalStudentCredits;
+            double gpa = TotalStudentCredits = new double();
+            Dictionary<Course, double> TotalCourseScore;
+            Dictionary<Course, double> StudentCourseGrades = TotalCourseScore = new Dictionary<Course, double>();
 
-            return gpa;
+            foreach (var allc in courseService.Courses)
+            {
+                foreach (var alla in allc.Assignments)
+                {  
+                    TotalCourseScore[allc] += alla.TotalAvailablePoints;
+                }
+            }
+
+            foreach (var submits in student.Submissions)
+            {
+                StudentCourseGrades[submits.Key.ParentCourse] += submits.Value;
+            }
+
+            foreach (var courses in TotalCourseScore)
+            {
+                TotalStudentCredits += courses.Key.CreditHours;
+            }
+
+            double pre_div_grade_sum = new double();
+            foreach (var grades in StudentCourseGrades)
+            {
+                var coursecred = grades.Key.CreditHours;
+                var studentpts = grades.Value;
+
+                pre_div_grade_sum += (coursecred * (studentpts / TotalCourseScore[grades.Key]));
+            }
+
+            return pre_div_grade_sum / TotalStudentCredits;
         }
 
         public void ListStudents()

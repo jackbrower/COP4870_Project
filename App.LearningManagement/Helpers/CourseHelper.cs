@@ -201,7 +201,12 @@ namespace App.LearningManagement.Helpers
             var selectedCourse = courseService.Courses.FirstOrDefault(s => s.Code.Equals(selection, StringComparison.InvariantCultureIgnoreCase));
             if (selectedCourse != null)
             {
-                selectedCourse.Assignments.Add(CreateAssignment());
+                var new_assn = CreateAssignment(selectedCourse);
+                selectedCourse.Assignments.Add(new_assn);
+                foreach (var s in selectedCourse.Roster)
+                {
+                    s.Submissions.Add(new_assn, -1);
+                }
             }
         }
         public void AddModule()
@@ -346,6 +351,26 @@ namespace App.LearningManagement.Helpers
             }
 
         }
+        public void ViewAssignment()
+        {
+            Console.WriteLine("Enter the code for the course:");
+            courseService.Courses.ForEach(Console.WriteLine);
+            var selection = Console.ReadLine();
+
+            var selectedCourse = courseService.Courses.FirstOrDefault(s => s.Code.Equals(selection, StringComparison.InvariantCultureIgnoreCase));
+            if (selectedCourse != null)
+            {
+                Console.WriteLine("Choose an assignment to update:");
+                selectedCourse.Assignments.ForEach(Console.WriteLine);
+                var selectionStr = Console.ReadLine() ?? string.Empty;
+                var selectionInt = int.Parse(selectionStr);
+                var selectedAssignment = selectedCourse.Assignments.FirstOrDefault(a => a.Id == selectionInt);
+                if(selectedAssignment != null)
+                {
+                    Console.Write(selectedAssignment);
+                }
+            }
+        }
         public void UpdateAssignment()
         {
             Console.WriteLine("Enter the code for the course:");
@@ -362,9 +387,16 @@ namespace App.LearningManagement.Helpers
                 var selectedAssignment = selectedCourse.Assignments.FirstOrDefault(a => a.Id == selectionInt);
                 if(selectedAssignment != null)
                 {
+                    var new_assn = CreateAssignment(selectedCourse);
                     var index = selectedCourse.Assignments.IndexOf(selectedAssignment);
                     selectedCourse.Assignments.RemoveAt(index);
-                    selectedCourse.Assignments.Insert(index, CreateAssignment());
+                    selectedCourse.Assignments.Insert(index, new_assn);
+                    
+                    foreach (var s in selectedCourse.Roster)
+                    {
+                        s.Submissions.Add(new_assn, s.Submissions[selectedAssignment]);
+                        s.Submissions.Remove(selectedAssignment);
+                    }
                 }
             }
         }
@@ -385,6 +417,40 @@ namespace App.LearningManagement.Helpers
                 if (selectedAssignment != null)
                 {
                     selectedCourse.Assignments.Remove(selectedAssignment);
+                    
+                    foreach (var s in selectedCourse.Roster)
+                    {
+                        s.Submissions.Remove(selectedAssignment);
+                    }
+                }
+            }
+        }
+        public void GradeSubmission()
+        {
+            Console.WriteLine("Enter the code for the course:");
+            courseService.Courses.ForEach(Console.WriteLine);
+            var selection = Console.ReadLine();
+
+            var selectedCourse = courseService.Courses.FirstOrDefault(s => s.Code.Equals(selection, StringComparison.InvariantCultureIgnoreCase));
+            if (selectedCourse != null)
+            {
+                Console.WriteLine("Choose an assignment to grade:");
+                selectedCourse.Assignments.ForEach(Console.WriteLine);
+                var selectionStr = Console.ReadLine() ?? string.Empty;
+                var selectionInt = int.Parse(selectionStr);
+                var selectedAssignment = selectedCourse.Assignments.FirstOrDefault(a => a.Id == selectionInt);
+                if(selectedAssignment != null)
+                {
+                    Console.WriteLine("Select a student to grade:");
+                    selectedCourse.Roster.ForEach(Console.WriteLine);
+                    var selectedId = Console.ReadLine() ?? string.Empty;
+                    var selectedStudent = studentService.Students.FirstOrDefault(s => s.Id == int.Parse(selectedId));
+                    if (selectedStudent != null)
+                    {
+                        Console.WriteLine("Enter the grade:");
+                        var gradeint = Console.ReadLine() ?? string.Empty;
+                        selectedStudent.Submissions[selectedAssignment] = double.Parse(gradeint);
+                    }
                 }
             }
         }
@@ -531,7 +597,7 @@ namespace App.LearningManagement.Helpers
                 continueAdding = true;
                 while (continueAdding)
                 {
-                    c.Assignments.Add(CreateAssignment());
+                    c.Assignments.Add(CreateAssignment(c));
                     Console.WriteLine("Add more assignments? (Y/N)");
                     assignResponse = Console.ReadLine() ?? "N";
                     if (assignResponse.Equals("N", StringComparison.InvariantCultureIgnoreCase))
@@ -683,7 +749,7 @@ namespace App.LearningManagement.Helpers
                 HtmlBody = body
             };
         }
-        private Assignment CreateAssignment()
+        private Assignment CreateAssignment(Course currentCourse)
         {
             //Name
             Console.WriteLine("Name:");
@@ -693,13 +759,14 @@ namespace App.LearningManagement.Helpers
             var assignmentDescription = Console.ReadLine() ?? string.Empty;
             //TotalPoints
             Console.WriteLine("TotalPoints:");
-            var totalPoints = decimal.Parse(Console.ReadLine() ?? "100");
+            var totalPoints = double.Parse(Console.ReadLine() ?? "100");
             //DueDate
             Console.WriteLine("DueDate:");
             var dueDate = DateTime.Parse(Console.ReadLine() ?? "01/01/1900");
 
             return new Assignment
             {
+                ParentCourse = currentCourse,
                 Name = assignmentName,
                 Description = assignmentDescription,
                 TotalAvailablePoints = totalPoints,
