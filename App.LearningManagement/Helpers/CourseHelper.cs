@@ -425,6 +425,42 @@ namespace App.LearningManagement.Helpers
                 }
             }
         }
+        public double CalcGPA(Student student)
+        {
+            double TotalStudentCredits;
+            double gpa = TotalStudentCredits = new double();
+            Dictionary<Course, double> TotalCourseScore;
+            Dictionary<Course, double> StudentCourseGrades = TotalCourseScore = new Dictionary<Course, double>();
+
+            foreach (var allc in courseService.Courses)
+            {
+                foreach (var alla in allc.Assignments)
+                {  
+                    TotalCourseScore[allc] += alla.TotalAvailablePoints;
+                }
+            }
+
+            foreach (var submits in student.Submissions)
+            {
+                StudentCourseGrades[submits.Key.ParentCourse] += submits.Value;
+            }
+
+            foreach (var courses in TotalCourseScore)
+            {
+                TotalStudentCredits += courses.Key.CreditHours;
+            }
+
+            double pre_div_grade_sum = new double();
+            foreach (var grades in StudentCourseGrades)
+            {
+                var coursecred = grades.Key.CreditHours;
+                var studentpts = grades.Value;
+
+                pre_div_grade_sum += (coursecred * (studentpts / TotalCourseScore[grades.Key]));
+            }
+
+            return pre_div_grade_sum / TotalStudentCredits;
+        }
         public void GradeSubmission()
         {
             Console.WriteLine("Enter the code for the course:");
@@ -450,6 +486,8 @@ namespace App.LearningManagement.Helpers
                         Console.WriteLine("Enter the grade:");
                         var gradeint = Console.ReadLine() ?? string.Empty;
                         selectedStudent.Submissions[selectedAssignment] = double.Parse(gradeint);
+
+                        CalcGPA(selectedStudent);
                     }
                 }
             }

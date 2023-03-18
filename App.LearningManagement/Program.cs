@@ -81,6 +81,7 @@ namespace COP4870_Project // Note: actual namespace depends on the project name.
             Console.WriteLine("13. Update an announcement in a course");
             Console.WriteLine("14. List all courses");               //course
             Console.WriteLine("15. Search for a course");            //course
+            Console.WriteLine("16. Grade assignment");
 
 
             var input = Console.ReadLine();
@@ -141,6 +142,10 @@ namespace COP4870_Project // Note: actual namespace depends on the project name.
                     Console.WriteLine("Enter a query:");
                     var query = Console.ReadLine() ?? string.Empty;
                     courseHelper.SearchCourses(query);
+                }
+                else if (result == 16)
+                {
+                    courseHelper.GradeSubmission();
                 }
             }
         }
